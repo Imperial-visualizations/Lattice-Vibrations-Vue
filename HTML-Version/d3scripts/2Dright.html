@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--Title-->
+    <title>Infinite Lattice 2D</title>
+    <!--css links-->
+    <link href="../styles/style.css" rel="stylesheet">
+    <!--Required JS resources-->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="../scripts/math.min.js"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            extensions: ["tex2jax.js"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+            tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+            },
+            "HTML-CSS": { fonts: ["TeX"] }
+        });
+    </script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+    <!--    Right Side of Window - containing mainly interactive and visual content    -->
+    <div class="my-vis-space" style="padding-left:15px;padding-top:10px;overflow-y: auto;">
+            
+        <!--Visualisation main canvas-->
+        <div id="main-vis" style="width: 50vw; height: 50vw; float: left; margin-right:2%; margin-top:3%"></div>
+        
+        <!--Interactive arrow element-->
+        <div id='interactive-arrow' style="width: 17.5vw; height: 17.5vw; float: left;  margin-right: 1%"></div>      
+        <div id="dispersion-graph" style="width: 17.5vw; height: 17.5vw; float: left;"></div>
+
+        <!--Buttons/Sliders-->
+        <div class="overall-sliders-container" style="float: left;">
+            <div class="text section-body odd" style="float: left"> 
+            <div style="width: 100%; float: left;">
+                <span class="mathJaxInline">$\textbf{k} = \frac{\pi}{a} \begin{bmatrix} d_x \\ d_y \end{bmatrix} $</span>
+            </div>
+            <div style="width: 50%; float: left;">
+                <span class="mathJaxInline">$\textbf{k} \cdot \textbf{u}_\textbf{k} = $</span>
+                <span id = "dotproduct"> 123 </span>
+            </div>
+            <div style="width: 50%; float: left;">
+                <span class="mathJaxInline">$| \textbf{k} \times \textbf{u}_\textbf{k}| = $</span>
+                <span id = "crossproduct"> 456 </span>
+            </div>
+        
+        <!--Buttons/Sliders-->
+        <div>
+            <div style="width: 100%; float: left;">                 
+                <!--BEGIN Slider-->
+                <label class="slider-label">
+                    $d_x$ :
+                    <span id="dx-display">0.1</span>
+                </label>
+                <label class="slider">
+                    <span class="sliderMin">-1</span>
+                    <input id="dx-range" class="inputs" max="1" min="-1" name="r" step="0.01" type="range" value="0.1"/>
+                    <span class="sliderMax">1</span>
+                </label>
+                <!--END Slider-->
+                
+                <!--BEGIN Slider-->
+                <label class="slider-label">
+                    $d_y$ :
+                    <span id="dy-display">0.1</span>
+                </label>
+                <label class="slider">
+                    <span class="sliderMin">-1</span>
+                    <input id="dy-range" class="inputs" max="1" min="-1" name="r" step="0.01" type="range" value="0.1"/>
+                    <span class="sliderMax">1</span>
+                </label>
+                <!--END Slider-->
+                <!--BEGIN Slider-->
+                <label class="slider-label">
+                    $u_{k_x}$:
+                    <span id="ukx-display">0.5</span>
+                </label>
+                <label class="slider">
+                    <span class="sliderMin">-1</span>
+                    <input id="ukx-range" class="inputs" max="1" min="-1" name="r" step="0.01" type="range" value="0.5"/>
+                    <span class="sliderMax">1</span>
+                </label>
+                <!--END Slider-->
+
+                <!--BEGIN Slider-->
+                <label class="slider-label">
+                    $u_{k_y}$:
+                    <span id="uky-display">0.5</span>
+                </label>
+                <label class="slider">
+                    <span class="sliderMin">-1</span>
+                    <input id="uky-range" class="inputs" max="1" min="-1" name="r" step="0.01" type="range" value="0.5"/>
+                    <span class="sliderMax">1</span>
+                </label>
+                <!--END Slider-->
+            </div>
+        
+        </div>
+        </div>
+    </div>
+
+
+
+    
+</div>
+<script src="2D_d3canvas.js"></script>
+
+</body>
+</html>

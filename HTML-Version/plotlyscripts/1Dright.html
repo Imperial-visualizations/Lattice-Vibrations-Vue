@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--Title-->
+    <title>Infinite Lattice 1D</title>
+    <!--css links-->
+    <link href="../styles/style.css" rel="stylesheet">
+    <!--Required JS resources-->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            extensions: ["tex2jax.js"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+            tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+            },
+            "HTML-CSS": { fonts: ["TeX"] }
+        });
+    </script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+    <!--    Right Side of Window - containing mainly interactive and visual content    --> 
+    <div class="my-vis-space" style="padding-left:15px;padding-top:10px;overflow-y: auto;">
+        <div id="plotly-div" style="width: 50%; float: left; margin-right:10%"></div>
+
+        <!--Buttons/Sliders-->
+        <div class="overall-sliders-container" style="float: left;">
+
+            <span class="mathJaxInline">$ k = \frac{\pi}{a} d $</span>
+
+            <div style="width: 100%;">                 
+                <!--BEGIN Slider-->
+                <label class="slider-label">
+                    $d$:
+                    <span id="d-display">0.1</span>
+                </label>
+                <label>
+                    <input id="d" type="text" value="0.1"/>
+                </label>
+                <!--END Slider--> 
+            </div>
+
+            <div style="width: 100%;">                 
+                <!--BEGIN Slider-->
+                <label class="slider-label">
+                    $u_k$:
+                    <span id="uk-display">0.5</span>
+                </label>
+                <label class="slider">
+                    <span class="sliderMin">-1</span>
+                    <input id="uk" class="inputs" max="1" min="-1" name="r" step="0.01" type="range" value="0.5"/>
+                    <span class="sliderMax">1</span>
+                </label>
+                <!--END Slider--> 
+            </div>
+
+        </div>
+
+    </div>
+
+<script src="1D_plotly.js"></script>
+
+</body>
+</html>
